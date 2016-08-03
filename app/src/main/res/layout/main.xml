@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@color/DarkBlueThing"
+        android:elevation="4dp"
+        app:theme="@style/mainStyle"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:id="@+id/connectLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="0dp"
+        android:layout_weight="1">
+
+        <Button
+            style="@style/ConnectButton"
+            android:id="@+id/btn_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="Connect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:paddingTop="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/temperatureLayout"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/temperatureCard"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                card_view:cardCornerRadius="6dp"
+                android:layout_marginLeft="15dp"
+                card_view:cardBackgroundColor="@color/whitegrey">
+
+                <TextView
+                    android:id="@+id/tempertureHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_header"
+                    android:textSize="16dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/whitegrey"/>
+
+                <TextView
+                    android:id="@+id/temperatureText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="36dp"
+                    android:text="@string/temp"
+                    android:background="@color/whitegrey"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/weightLayout"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/weightCard"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                card_view:cardCornerRadius="6dp"
+                android:layout_marginLeft="9dp"
+                card_view:cardBackgroundColor="@color/whitegrey">
+
+                <TextView
+                    android:id="@+id/weightHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weight_header"
+                    android:textSize="16dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/whitegrey"/>
+
+                <TextView
+                    android:id="@+id/weightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="36dp"
+                    android:text="@string/weight"
+                    android:background="@color/whitegrey"/>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/powerLayout"
+        android:layout_marginTop="30dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/waterText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/water"
+            android:textSize="18dp"
+            android:gravity="center_horizontal"/>
+
+        <com.akexorcist.roundcornerprogressbar.IconRoundCornerProgressBar
+            android:id="@+id/waterProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rcProgress="100"
+            app:rcMax="100"
+            app:rcRadius="5dp"
+            app:rcBackgroundPadding="2dp"
+            app:rcReverse="false"
+            app:rcProgressColor="@color/DarkBlueThing"
+            app:rcSecondaryProgressColor="@color/ColorPrimary"
+            app:rcBackgroundColor="@color/whitegrey"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnPower"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/power_selector"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
